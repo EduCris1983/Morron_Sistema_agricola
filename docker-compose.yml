@@ -51,12 +51,13 @@ services:
       dockerfile: Dockerfile.dev
     container_name: morron_frontend
     ports:
-      - "${FRONTEND_PORT:-5173}:5173"
+      - "${FRONTEND_PORT:-5175}:5175"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     environment:
       VITE_API_BASE_URL: http://api:8000
+      VITE_PORT: 5175
     depends_on:
       - api
     networks:

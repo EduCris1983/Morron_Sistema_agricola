@@ -36,7 +36,7 @@ docker-compose up
 
 | Servicio | URL |
 |----------|-----|
-| **Frontend (React)** | http://localhost:5173 |
+| **Frontend (React)** | http://localhost:5175 |
 | **API (FastAPI)** | http://localhost:8000 |
 | **API Docs (Swagger)** | http://localhost:8000/docs |
 | **API ReDoc** | http://localhost:8000/redoc |
@@ -75,7 +75,7 @@ docker-compose up
 ## ✅ Flujo de testing recomendado
 
 ### 1. Autenticación (2 min)
-- [ ] Ir a http://localhost:5173
+- [ ] Ir a http://localhost:5175
 - [ ] Ver formulario de login
 - [ ] Intentar login con credenciales incorrectas → debe fallar
 - [ ] Hacer login con `admin@cna.cl` / `admin123` → debe redirigir a /tablero
@@ -169,7 +169,7 @@ docker-compose up
 
 ## 🐛 Troubleshooting
 
-### "Connection refused" en http://localhost:5173
+### "Connection refused" en http://localhost:5175
 **Solución:** Espera 1-2 minutos más mientras se construyen las imágenes. Revisa logs: `docker-compose logs frontend`
 
 ### "Database connection error" en la API
@@ -273,6 +273,20 @@ docker-compose exec postgres psql -U postgres -d morron_erp
 **Aprox. tiempo total: 30 minutos**
 
 ---
+
+---
+
+## 🚀 Listo para testear
+
+Ejecuta en la terminal:
+```bash
+cd f:\Proyectos\Morron_sistrema_agricola
+docker-compose up
+```
+
+Luego abre en tu navegador:
+- **Frontend:** http://localhost:5175
+- **API Docs:** http://localhost:8000/docs
 
 **¿Problemas?** Abre una issue o revisa los logs con `docker-compose logs`
 
