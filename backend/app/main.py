@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
-from app.routers import cliente, producto, venta, cobranza, tablero
+from app.routers import auth, cliente, producto, venta, cobranza, tablero
 
 settings = get_settings()
 
@@ -21,6 +21,7 @@ app.add_middleware(
 )
 
 # Routers
+app.include_router(auth.router)
 app.include_router(cliente.router)
 app.include_router(producto.router)
 app.include_router(venta.router)
