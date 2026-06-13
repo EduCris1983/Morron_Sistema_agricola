@@ -32,12 +32,17 @@ Cubre cuatro dominios:
 - ✅ Revisión de la carpeta y del Excel heredado.
 - ✅ **SDD redactado** (`SDD_Mini-ERP_CNA.md`): arquitectura, DDL completo (dominio + RBAC + RAG), reglas de negocio, API, roadmap.
 - ✅ Bitácora iniciada (`BITACORA.md`).
-- ⏳ **Pendiente confirmar:** D-1 (base de cuotas: Neto vs Total con IVA) y D-2 (backend: FastAPI vs NestJS).
-- ⏭️ **Siguiente:** afinar DDL definitivo → `docker-compose.yml` para el NAS → andamiar repo (Fase 0).
+- ✅ **Fase 0 completada:** Andamiaje (docker-compose, .env, DDL, estructura).
+- ✅ **Fase 1 completada:** Backend (1000+ líneas), Frontend (1000+ líneas), Autenticación JWT.
+- ✅ **Fase 2 completada:** Alembic (migraciones versionadas), RBAC (17 permisos granulares), Frontend completo (5 páginas).
+- ⏳ **Listo para testing:** puerto frontend 5175, API 8000, PostgreSQL 5432 (requiere Docker + reinicio PC).
+- ⏭️ **Siguiente:** Levantar con Docker Desktop → testear flujos completos → RAG + MCP (futuro).
 
-## Decisiones abiertas (bloqueantes)
-- **D-1 — Base de cuotas:** contradicción heredada. CLAUDE.md viejo decía *Total con IVA*; README V3.0 decía *Neto*. El modelo soporta ambas (`ventas.base_cobranza`). **Confirmar con el negocio.**
-- **D-2 — Backend:** FastAPI (Python, afinidad RAG/MCP) vs NestJS (TS, monorepo).
+## Decisiones confirmadas ✅
+- **D-1 — Base de cuotas:** ✅ **Total con IVA** (implementado en Venta.base_cobranza)
+- **D-2 — Backend:** ✅ **FastAPI (Python)** (completamente implementado)
+- **D-3 — Orden pago mora:** ✅ **Interés→Capital** (implementado en cobranza)
+- **D-4 — Fecha base cuotas:** ✅ **Emisión + plazo** (implementado en calcular_cuotas)
 - Resto en `SDD_Mini-ERP_CNA.md` §11.
 
 ## Enrutamiento técnico
