@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Exponer puerto
-EXPOSE 5173
+EXPOSE 5175
 
 # Comando: ejecutar dev server
 CMD ["npm", "run", "dev"]
