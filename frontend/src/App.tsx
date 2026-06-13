@@ -3,6 +3,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Login from './pages/Login'
 import Tablero from './pages/Tablero'
 import Clientes from './pages/Clientes'
+import Productos from './pages/Productos'
+import Ventas from './pages/Ventas'
+import Cobranza from './pages/Cobranza'
 import ProtectedRoute from './components/ProtectedRoute'
 
 const queryClient = new QueryClient()
@@ -28,6 +31,33 @@ function App() {
             element={
               <ProtectedRoute>
                 <Clientes />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/productos"
+            element={
+              <ProtectedRoute>
+                <Productos />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/ventas"
+            element={
+              <ProtectedRoute>
+                <Ventas />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/cobranza"
+            element={
+              <ProtectedRoute>
+                <Cobranza />
               </ProtectedRoute>
             }
           />
